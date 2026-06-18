@@ -346,8 +346,52 @@ a:hover { text-decoration: underline; }
   align-items: center;
   justify-content: center;
   padding: 120px 0 80px;
-  background: var(--color-bg);
   border-bottom: 3px solid var(--color-green);
+  color: #E0DED6;
+  overflow: hidden;
+}
+
+.section-cover .cover-logo-mark {
+  color: var(--color-gold-light);
+}
+
+.section-cover .cover-logo-name {
+  color: rgba(224,222,214,0.85);
+}
+
+.section-cover .cover-logo-sep {
+  color: rgba(255,255,255,0.3);
+}
+
+.section-cover .cover-title {
+  color: #FFFFFF;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.section-cover .cover-subtitle {
+  color: rgba(224,222,214,0.9);
+}
+
+.section-cover .cover-tagline {
+  color: var(--color-gold-light);
+}
+
+.section-cover .cover-label {
+  color: var(--color-gold-light);
+  border-color: var(--color-gold-light);
+}
+
+.section-cover .cover-meta-key {
+  color: rgba(224,222,214,0.6);
+}
+
+.section-cover .cover-meta-val {
+  color: rgba(224,222,214,0.9);
+}
+
+.section-cover .cover-divider-top,
+.section-cover .cover-divider-bot {
+  background: var(--color-gold-light);
 }
 
 /* --- SECTION NUMBER --- */
@@ -1140,8 +1184,75 @@ a:hover { text-decoration: underline; }
   #pdf-btn, #docx-btn { display: none; }
 }
 
+/* --- REPORT FIGURES --- */
+.report-figure {
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+}
+.report-figure img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+.report-figure figcaption {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.report-figure-divider {
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 0;
+}
+.report-figure-divider img {
+  border-radius: 0;
+  width: 100%;
+}
+
+/* --- COVER BACKGROUND --- */
+.cover-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.cover-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cover-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26, 58, 46, 0.93) 0%, rgba(14, 31, 24, 0.9) 40%, rgba(59, 107, 58, 0.85) 100%);
+}
+
+.section-cover {
+  position: relative;
+}
+
+.cover-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- PILLAR CARD IMAGES --- */
+.pillar-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0;
+  margin-bottom: 12px;
+}
+
 /* --- PRINT STYLES --- */
 @media print {
+  .report-figure { page-break-inside: avoid; }
+  .report-figure img { box-shadow: none; border: 1px solid #ccc; }
+}
   :root {
     --color-bg: #FFFFFF;
     --color-bg-alt: #F7F7F7;
